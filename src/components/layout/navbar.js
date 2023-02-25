@@ -108,11 +108,11 @@ export function NavBar() {
             </Typography>
             <Divider />
             <List>
+                
+                <ListItem disablePadding>
                 <Box component="a" href="tel:+79920095149" sx={style.logoWrapper}>
                     9920095149
                 </Box>
-                <ListItem disablePadding>
-                    Phone
                 </ListItem>
                 <ListItem disablePadding>
                     Email
