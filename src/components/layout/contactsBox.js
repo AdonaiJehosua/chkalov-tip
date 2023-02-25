@@ -12,7 +12,7 @@ const contacts = {
     adress: 'Первоуральск, Чкалова 18В',
     workHours: 'Пн-Пт, 09:00-17:00',
     toString: function() {
-        return `Телефон: ${this.phone}\nПочта: ${this.email}\nАдрес: ${this.adress}\nВремя работы: ${this.workHours}`
+        return `Чкалов.Типография\nТелефон: ${this.phone}\nПочта: ${this.email}\nАдрес: ${this.adress}\nВремя работы: ${this.workHours}`
     }
 }
 
