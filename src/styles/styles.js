@@ -1,17 +1,4 @@
 import { createTheme } from "@mui/material/styles"
-// import RalewayTtf from "/fonts/Raleway-Regular.ttf"
-
-const raleway = {
-    fontFamily: 'Raleway',
-    fontStyle: 'normal',
-    fontDisplay: 'swap',
-    fontWeight: 400,
-    src: `
-      local('Raleway'),
-      local('Raleway-Regular'),
-      url("/fonts/Raleway-Regular.ttf") format('truetype')
-    `,
-  };
 
 export const mainTheme = createTheme({
     palette: {
@@ -27,13 +14,25 @@ export const mainTheme = createTheme({
         }
     },
     typography: {
-        fontFamily: ['Raleway', 'Arial'].join(',')
+        fontFamily: [
+          'aFuturaRound',
+          'GothamPro',
+    ].join(', '),
+    h5: {
+        fontFamily: [
+            'GothamPro',
+            'aFuturaRound',
+    ].join(', '),
+    }
     },
     components: {
-        MuiCssBaseline: {
-            '@global': {
-                '@font-face': [raleway]
+        MuiAppBar: {
+          styleOverrides: {
+            colorPrimary: {
+              backgroundColor: "transparent",
+              boxShadow: 'none',
             }
+          }
         }
-    }
+      }
 })

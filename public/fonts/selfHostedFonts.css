@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'aFuturaRound';
+  font-weight: normal;
+  font-style: normal;
+  src: url('./a_futuraround.ttf');
+}
+
+@font-face {
+  font-family: 'aFuturaRound';
+  font-weight: bold;
+  font-style: normal;
+  src: url('./a_futuraround-bold.ttf');
+}
+@font-face {
+  font-family: 'GothamPro';
+  font-weight: normal;
+  font-style: normal;
+  src: url('./GothaProReg.ttf');
+}
+@font-face {
+  font-family: 'GothamPro';
+  font-weight: bold;
+  font-style: normal;
+  src: url('./GothaProBol.ttf');
+}
+@font-face {
+  font-family: 'GothamPro';
+  font-weight: normal;
+  font-style: italic;
+  src: url('./GothaProIta.ttf');
+}
