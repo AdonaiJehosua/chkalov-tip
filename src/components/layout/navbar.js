@@ -18,18 +18,21 @@ import { Divider, Drawer, List, ListItem, ListItemButton, ListItemText, Swipeabl
 const style = {
     appBar: {
         position: 'static',
+        display: 'flex',
     },
 
     logoWrapper: {
         display: { xs: 'flex' },
-        flexGrow: 11,
-        justifyContent: 'center'
+        position: 'absolute',
+        minWidth: '100%',
+        minHeight: '100%',
+        justifyContent: 'center',
+
     },
     logo: {
         maxWidth: '120px'
     },
     mdMenu: {
-        flexGrow: 1,
         display: { xs: 'none', md: 'flex' },
         justifyContent: 'flex-start'
 
@@ -40,19 +43,14 @@ const style = {
         display: 'block'
     },
     xsMenu: {
-        flexGrow: 1,
         display: { xs: 'flex', md: 'none' }
     },
     xsMenuList: {
         display: { xs: 'block', md: 'none' },
     },
     contactsBoxWrapper: {
-        flexGrow: 1,
         display: { xs: 'none', md: 'flex' },
     },
-    contactsBoxWrapper2: {
-        flexGrow: 1,
-    }
 }
 
 const pages = ['О нас', 'Продукция', 'Услуги', 'Контакты']
@@ -62,9 +60,6 @@ export function NavBar() {
     const [anchorElNav, setAnchorElNav] = useState(null)
     const [anchorContacts, setAnchorContacts] = useState(null)
 
-    const handleOpenNavMenu = (event) => {
-        setAnchorElNav(event.currentTarget)
-    }
 
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
@@ -77,10 +72,15 @@ export function NavBar() {
         setAnchorContacts(null);
     }
 
-    const [mobileOpen, setMobileOpen] = useState(false);
+    const [mobileOpen, setMobileOpen] = useState(false)
+    const [mobileContactsOpen, setMobileContactsOpen] = useState(false)
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
+    }
+
+    const handleContactsDrawerToggle = () => {
+        setMobileContactsOpen((prevState) => !prevState);
     }
 
     const drawer = (
@@ -100,54 +100,45 @@ export function NavBar() {
             </List>
         </Box>
     )
-    
+
+    const xsContacts = (
+        <Box onClick={handleContactsDrawerToggle} sx={{ textAlign: 'center' }}>
+            <Typography variant="h6" sx={{ my: 2, fontFamily: 'aFuturaRound', fontWeight: 'bold' }}>
+                Свяжитесь с нами
+            </Typography>
+            <Divider />
+            <List>
+                <Box component="a" href="tel:+79920095149" sx={style.logoWrapper}>
+                    9920095149
+                </Box>
+                <ListItem disablePadding>
+                    Phone
+                </ListItem>
+                <ListItem disablePadding>
+                    Email
+                </ListItem>
+                <ListItem disablePadding>
+                    Adress
+                </ListItem>
+            </List>
+        </Box>
+    )
+
 
     return (
         <AppBar sx={style.appBar}>
-            <Box maxWidth="xl" sx={{ margin: 'none', margin: '0 20px' }} >
-                <Toolbar disableGutters>
-
-
-
+            <Box sx={{ margin: '0 20px' }} >
+                <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
+                    {/* Логотип */}
+                    <Box component="a" href="" sx={style.logoWrapper}>
+                        <Box component='img' src={textLogo.src} sx={style.logo} />
+                    </Box>
+                    {/* Мобильное меню */}
                     <Box sx={style.xsMenu}>
-                        {/* <IconButton
-                            size="large"
-                            aria-controls="menu-appbar"
-                            aria-haspopup="true"
-                            onClick={handleOpenNavMenu}
-                            color="inherit"
-                        >
-                            <MenuIcon />
-                        </IconButton>
-
-                        <Menu
-                            id="menu-appbar"
-                            anchorEl={anchorElNav}
-                            anchorOrigin={{
-                                vertical: 'bottom',
-                                horizontal: 'left',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'left',
-                            }}
-                            open={Boolean(anchorElNav)}
-                            onClose={handleCloseNavMenu}
-                            sx={style.xsMenuList}
-                        >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu> */}
                         <IconButton
                             color="inherit"
                             aria-label="open drawer"
-                            edge="start"
                             onClick={handleDrawerToggle}
-                            sx={{ mr: 2,}}
                         >
                             <MenuIcon />
                         </IconButton>
@@ -167,7 +158,7 @@ export function NavBar() {
                             {drawer}
                         </SwipeableDrawer>
                     </Box>
-
+                    {/* Десктопное меню */}
                     <Box sx={style.mdMenu}>
                         {pages.map((page) => (
                             <Button
@@ -179,50 +170,35 @@ export function NavBar() {
                             </Button>
                         ))}
                     </Box>
-
-                    <Box component="a" href="" sx={style.logoWrapper}>
-                        <Box component='img' src={textLogo.src} sx={style.logo} />
-                    </Box>
-
+                    {/* Десктопные контакты */}
                     <Box sx={style.contactsBoxWrapper}>
                         <ContactsBox />
                     </Box>
-
+                    {/* Мобильные контакты */}
                     <Box sx={style.xsMenu}>
                         <IconButton
-                            size="large"
-                            aria-controls="contacts-appbar"
-                            aria-haspopup="true"
-                            onClick={handleOpenContactsMenu}
                             color="inherit"
+                            aria-label="open drawer"
+                            onClick={handleContactsDrawerToggle}
                         >
-                            <Tooltip title={'Контакты'} placement={'left'}>
-                                <PhoneIcon />
-                            </Tooltip>
+                            <PhoneIcon />
                         </IconButton>
-
-                        <Menu
-                            id="contacts-appbar"
-                            anchorEl={anchorContacts}
-                            anchorOrigin={{
-                                vertical: 'bottom',
-                                horizontal: 'left',
+                        <SwipeableDrawer
+                            anchor='right'
+                            variant="temporary"
+                            open={mobileContactsOpen}
+                            onClose={handleContactsDrawerToggle}
+                            ModalProps={{
+                                keepMounted: true, // Better open performance on mobile.
                             }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'left',
+                            sx={{
+                                display: 'block',
+                                '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '50%' },
                             }}
-                            open={Boolean(anchorContacts)}
-                            onClose={handleCloseContactsMenu}
-                            sx={style.xsMenuList}
                         >
-                            <Box sx={style.contactsBoxWrapper2}>
-                                <ContactsBox />
-                            </Box>
-                        </Menu>
+                            {xsContacts}
+                        </SwipeableDrawer>
                     </Box>
-
                 </Toolbar>
             </Box>
         </AppBar>
