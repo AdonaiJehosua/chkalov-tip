@@ -1,7 +1,6 @@
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
-import Button from '@mui/material/Button'
 import textLogo from '../../../media/images/textLogo.svg'
 import { ContactsBox } from './contactsBox'
 import { useContext, useState } from 'react'
