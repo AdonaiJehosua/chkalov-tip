@@ -1,8 +1,8 @@
-import { AboutPage } from "@/components/pagesComponents/AboutPage";
+import { ContactsPage } from "@/components/pagesComponents/ContactsPage";
 import PageWithHead from "@/components/reusableComponents/PageWithHead";
 
 export default function Contacts() {
     return (
-        <PageWithHead title={'Контакты'} pageComponent={<AboutPage/>}/>
+        <PageWithHead title={'Контакты'} pageComponent={<ContactsPage/>}/>
     )
 }
