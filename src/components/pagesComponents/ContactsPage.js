@@ -53,10 +53,12 @@ export function ContactsPage() {
 
 
     return (
-        <YMaps>
+        <YMaps query={{
+            apikey: 'aa28440e-21cf-421f-8f0e-a5ee25084a75'
+        }}>
             <Box sx={style}>
                 Контакты
-                <Map defaultState={{ center: [56.89439849, 59.94808121], zoom: 17 }}>
+                <Map defaultState={{ center: [56.89439849, 59.94808121], zoom: 17 }} modules={['geolocation', 'geocode']}>
                     <Button
                         options={{ maxWidth: 128 }}
                         data={{ content: "Unpress me!" }}
