@@ -1,10 +1,14 @@
 import { createContext } from "react";
 
 
-export const contactsContext = createContext({
-    companyName: '',
-    adress: '',
-    phone: '',
-    email: '',
-    workTime: ''
+export const ContactsContext = createContext({
+    companyName: 'Чкалов.Типография',
+    phone: '+79673695787',
+    visiblePhone: '+7 (967) 369-57-87',
+    email: 'zakaz@chkalov-tip.ru',
+    adress: 'Первоуральск, Чкалова 18В',
+    workHours: 'Пн-Пт, 09:00-17:00',
+    toString: function () {
+        return `${this.companyName}\nТелефон: ${this.visiblePhone}\nПочта: ${this.email}\nАдрес: ${this.adress}\nВремя работы: ${this.workHours}`
+    }
 })
