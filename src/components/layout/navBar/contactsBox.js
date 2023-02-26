@@ -9,12 +9,13 @@ import { contactsBoxStyles } from "@/styles/navBarStyles"
 import Link from "next/link"
 
 const contacts = {
-    phone: '+7 (967) 369-57-87',
+    phone: '+79673695787',
+    visiblePhone: '+7 (967) 369-57-87',
     email: 'zakaz@chkalov-tip.ru',
     adress: 'Первоуральск, Чкалова 18В',
     workHours: 'Пн-Пт, 09:00-17:00',
     toString: function () {
-        return `Чкалов.Типография\nТелефон: ${this.phone}\nПочта: ${this.email}\nАдрес: ${this.adress}\nВремя работы: ${this.workHours}`
+        return `Чкалов.Типография\nТелефон: ${this.visiblePhone}\nПочта: ${this.email}\nАдрес: ${this.adress}\nВремя работы: ${this.workHours}`
     }
 }
 
