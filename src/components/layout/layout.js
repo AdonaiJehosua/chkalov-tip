@@ -1,7 +1,5 @@
 import { Box } from "@mui/material"
-import { NavBar } from "./navbar"
-
-import fone from '../../media/images/fone.svg'
+import { NavBar } from "./navBar/navbar"
 import { AnimatedLogo } from "../fone/animatedElems/logo"
 import { House } from "../fone/house"
 import { FoneCloud } from "../fone/animatedElems/foneCloud"
@@ -10,36 +8,11 @@ import { LeftCloud } from "../fone/animatedElems/leftCloud"
 import { RightCloud } from "../fone/animatedElems/rightCloud"
 import { Sun } from "../fone/sun"
 import { Tree } from "../fone/tree"
-
-const style = {
-    fone: {
-        width: '100%',
-        height: '100%',
-        padding: '0',
-        backgroundImage: `url(${fone.src})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        position: 'absolute',
-    },
-    layoutContainer: {
-        position: 'fixed',
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        justifyContent: 'center'
-    },
-    pageContainer: {
-        width: '100%', 
-        height: '100%', 
-        border: '1px solid black',
-        marginLeft: '15px',
-        marginRight: '15px'
-    },
-}
+import { mainLayoutComponentStyles } from "@/styles/mainLayoutComponentStyles"
 
 export function Layout({ children }) {
     return (
-        <Box sx={style.fone}>
+        <Box sx={mainLayoutComponentStyles.fone}>
             <Sun />
             <FoneCloud />
             <RightCloud top={'20px'} time={'100s'} />
@@ -51,8 +24,8 @@ export function Layout({ children }) {
             <AnimatedLogo />
             {/* <Header /> */}
             <NavBar />
-            <Box sx={style.layoutContainer}>
-                <Box sx={style.pageContainer}>
+            <Box sx={mainLayoutComponentStyles.layoutContainer}>
+                <Box sx={mainLayoutComponentStyles.pageContainer}>
                     {children}
                 </Box>
             </Box>
