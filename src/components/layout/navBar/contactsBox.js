@@ -3,8 +3,8 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import TelegramIcon from '@mui/icons-material/Telegram'
 import PhoneIcon from '@mui/icons-material/Phone'
-import { useState } from "react"
 import EmailIcon from '@mui/icons-material/Email'
+import { useState } from "react"
 import { contactsBoxStyles } from "@/styles/navBarStyles"
 import Link from "next/link"
 
@@ -38,6 +38,8 @@ function ContactsElem({ content, tooltipTitle, icons }) {
         setCopied(true)
         setTimeout(setCopied, 2000, false)
     }
+
+    
 
     return (
         <Box sx={contactsBoxStyles.contacts}>
