@@ -9,10 +9,23 @@ import { RightCloud } from "../fone/animatedElems/rightCloud"
 import { Sun } from "../fone/sun"
 import { Tree } from "../fone/tree"
 import { mainLayoutComponentStyles } from "@/styles/mainLayoutComponentStyles"
+import { ToastContainer } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export function Layout({ children }) {
     return (
         <Box sx={mainLayoutComponentStyles.fone}>
+            <ToastContainer
+                        position="bottom-right"
+                        autoClose={2000}
+                        hideProgressBar={false}
+                        newestOnTop
+                        closeOnClick
+                        rtl={false}
+                        draggable
+                        pauseOnHover
+                    />
             <Sun />
             <FoneCloud />
             <RightCloud top={'20px'} time={'100s'} />
