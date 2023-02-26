@@ -1,12 +1,15 @@
-import { Box, Divider, IconButton, List, ListItem, SwipeableDrawer, Typography } from "@mui/material"
+import { Box, Divider, IconButton, List, ListItem, ListItemButton, SwipeableDrawer, Typography } from "@mui/material"
 import PhoneIcon from '@mui/icons-material/Phone'
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { ContactsContext } from "@/appContext/contactsContext"
 
 
 
 
 export function XsContactsMenu() {
     const [mobileContactsOpen, setMobileContactsOpen] = useState(false)
+
+    const contacts = useContext(ContactsContext)
 
     const handleContactsDrawerToggle = () => {
         setMobileContactsOpen((prevState) => !prevState);
@@ -20,17 +23,39 @@ export function XsContactsMenu() {
             <Divider />
             <List>
                 <ListItem disablePadding>
-                    <Box component="a" href="tel:+79920095149">
-                        9920095149
-                    </Box>
+                    <ListItemButton>
+                        <Box component="a" href={`tel:${contacts.phone}`} target='_blank'>
+                            {contacts.visiblePhone}
+                        </Box>
+                    </ListItemButton>
                 </ListItem>
                 <ListItem disablePadding>
-                <Box component="a" href="mailto:zakaz@chkalov-tip.ru">
-                zakaz@chkalov-tip.ru
-                    </Box>
+                    <ListItemButton>
+                        <Box component="a" href={`https://t.me/${contacts.phone}`} target='_blank'>
+                            {contacts.visiblePhone}
+                        </Box>
+                    </ListItemButton>
                 </ListItem>
                 <ListItem disablePadding>
-                    Adress
+                    <ListItemButton>
+                        <Box component="a" href={`https://wa.me/${contacts.phone}`} target='_blank'>
+                            {contacts.visiblePhone}
+                        </Box>
+                    </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                    <ListItemButton>
+                        <Box component="a" href={`tel:${contacts.email}`}>
+                            {contacts.email}
+                        </Box>
+                    </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                    <ListItemButton>
+                        <Box >
+                            {contacts.adress}
+                        </Box>
+                    </ListItemButton>
                 </ListItem>
             </List>
         </Box>
