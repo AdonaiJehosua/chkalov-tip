@@ -3,7 +3,7 @@ import { createContext } from "react";
 
 export const ContactsContext = createContext({
     companyName: 'Чкалов.Типография',
-    phone: '+79673695787',
+    phone: '+79676395787',
     visiblePhone: '+7 (967) 369-57-87',
     email: 'zakaz@chkalov-tip.ru',
     adress: 'Свердловская обл., г. Первоуральск, Чкалова 18В',
