@@ -1,14 +1,14 @@
 export const navBarStyles = {
     appBar: {
-        position: 'static',
+        position: 'relative',
         display: 'flex',
+        border: '1px solid red'
     },
     logoWrapper: {
         display: { xs: 'flex' },
-        position: 'absolute',
-        minWidth: '100%',
-        minHeight: '100%',
+        position: 'relative',
         justifyContent: 'center',
+        margin: 'auto'
     },
     logoLink: {
         width: '200px',
