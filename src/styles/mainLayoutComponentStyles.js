@@ -44,30 +44,29 @@ const leftCloudAnimation = keyframes`
 
 const flyAnimation = keyframes`
   0% { 
-    transform: translateX(0%) translateY(0%) rotate(-5deg) 
+    transform: translateX(0%) translateY(0%) rotate(-10deg) 
   }
   25% {
-    transform: translateX(175%) translateY(-130%) rotate(-7deg) 
-  }
-  40% { 
-    transform: translateX(280%) translateY(-150%) rotate(-10deg) 
+    transform: translateX(237.5%) translateY(-100%) rotate(-5deg) 
   }
   50% { 
-    transform: translateX(350%) translateY(-160%) rotate(0deg) 
-  }
-  60% { 
-    transform: translateX(420%) translateY(-160%) rotate(5deg) 
+    transform: translateX(475%) translateY(-160%) rotate(0deg) 
   }
   75% { 
-    transform: translateX(525%) translateY(-140%) rotate(10deg) 
+    transform: translateX(712.5%) translateY(-100%) rotate(5deg) 
   }
   100% { 
-    transform: translateX(950%) translateY(-130%) rotate(15deg) 
+    transform: translateX(950%) translateY(-0%) rotate(10deg) 
   }
 `
 
 
 export const mainLayoutComponentStyles = {
+    wrapper: {
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100vh'
+    },
     fone: {
         width: '100%',
         height: '100%',
@@ -78,18 +77,19 @@ export const mainLayoutComponentStyles = {
         position: 'absolute',
     },
     layoutContainer: {
-        position: 'fixed',
+        position: 'relative',
         width: '100%',
         height: '100%',
         display: 'flex',
         justifyContent: 'center'
     },
     pageContainer: {
+        boxSizing: 'border-box',
         width: '100%',
         height: '100%',
         border: '1px solid black',
+        marginRight: '15px',
         marginLeft: '15px',
-        marginRight: '15px'
     },
     sun: {
         width: '100%',
@@ -166,5 +166,19 @@ export const mainLayoutComponentStyles = {
         left: '-13%',
         transform: 'rotate(15deg)',
         animation: `${flyAnimation} 60s linear infinite`,
+    },
+    textLogo: {
+    },
+    textLogoWrapper: {
+        position: 'absolute',
+        width: '0px',
+        top: {xs: '8px', sm: '12px', md: '16px'},
+        left: '50%',
+        display: 'flex',
+        justifyContent: 'center',
+        zIndex: '1101'
+    },
+    logoLink: {
+        
     },
 }
