@@ -10,6 +10,7 @@ import { PagesContext } from '@/appContext/PagesContext'
 import Link from 'next/link'
 import { XsMenu } from './xsMenu'
 import { MainMenu } from './mainMenu'
+import { TextLogo } from '@/components/fone/animatedElems/textLogo'
 
 export function NavBar() {
 
@@ -27,23 +28,18 @@ export function NavBar() {
             <AppBar sx={navBarStyles.appBar}>
                 <Box sx={{ margin: '0 20px' }} >
                     <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
-                        {/* Логотип */}
-                        <Box sx={navBarStyles.logoWrapper}>
-                            <Link href="/" style={navBarStyles.logoLink} >
-                                <Box component='img' src={textLogo.src} sx={navBarStyles.logo} />
-                            </Link>
-                        </Box>
+                        
                         {/* Мобильное меню */}
                         <Box sx={navBarStyles.xsMenu}>
                             <XsMenu pages={pages} selected={selected} handleMenuSelectedItem={handleMenuSelectedItem} />
                         </Box>
-                        {/* Мобильные контакты */}
-                        <Box sx={navBarStyles.xsMenu}>
-                            <XsContactsMenu />
-                        </Box>
                         {/* Десктопное меню */}
                         <Box sx={navBarStyles.mdMenu}>
                             <MainMenu pages={pages} selected={selected} handleMenuSelectedItem={handleMenuSelectedItem}/>
+                        </Box>
+                        {/* Мобильные контакты */}
+                        <Box sx={navBarStyles.xsMenu}>
+                            <XsContactsMenu />
                         </Box>
                         {/* Десктопные контакты */}
                         <Box sx={navBarStyles.contactsBoxWrapper}>
