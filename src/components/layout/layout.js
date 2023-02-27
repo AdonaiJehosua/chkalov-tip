@@ -11,30 +11,36 @@ import { Tree } from "../fone/tree"
 import { mainLayoutComponentStyles } from "@/styles/mainLayoutComponentStyles"
 import { ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
+import { TextLogo } from "../fone/animatedElems/textLogo"
 
 
 export function Layout({ children }) {
     return (
-        <Box sx={mainLayoutComponentStyles.fone}>
+        <Box sx={mainLayoutComponentStyles.wrapper}>
             <ToastContainer
-                        position="bottom-right"
-                        autoClose={2000}
-                        hideProgressBar={false}
-                        newestOnTop
-                        closeOnClick
-                        rtl={false}
-                        draggable
-                        pauseOnHover
-                    />
-            <Sun />
-            <FoneCloud />
-            <RightCloud top={'20px'} time={'100s'} />
-            <LeftCloud top={'100px'} time={'80s'} />
-            <RightCloud top={'170px'} time={'120s'} />
-            <Grass />
-            <House />
-            <Tree />
-            <AnimatedLogo />
+                position="bottom-right"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                draggable
+                pauseOnHover
+            />
+            <Box sx={mainLayoutComponentStyles.fone}>
+
+                <Sun />
+                <FoneCloud />
+                <RightCloud top={'20px'} time={'100s'} />
+                <LeftCloud top={'100px'} time={'80s'} />
+                <RightCloud top={'170px'} time={'120s'} />
+                <Grass />
+                <House />
+                <Tree />
+                <AnimatedLogo />
+                <TextLogo />
+            </Box>
+
             {/* <Header /> */}
             <NavBar />
             <Box sx={mainLayoutComponentStyles.layoutContainer}>
@@ -42,6 +48,7 @@ export function Layout({ children }) {
                     {children}
                 </Box>
             </Box>
+
         </Box>
     )
 }
