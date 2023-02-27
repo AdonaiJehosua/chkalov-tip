@@ -11,7 +11,7 @@ export const mainTheme = createTheme({
             main: '#964D15',
             dark: '#622E07',
             light: '#CB946B'
-        }
+        },
     },
     typography: {
         fontFamily: [
@@ -20,7 +20,6 @@ export const mainTheme = createTheme({
     ].join(', '),
     h5: {
         fontFamily: [
-            'GothamPro',
             'aFuturaRound',
     ].join(', '),
     }
@@ -33,6 +32,14 @@ export const mainTheme = createTheme({
               boxShadow: 'none',
             }
           }
+        },
+        MuiCssBaseline: {
+          styleOverrides: (themeParam) => `
+            a {
+              color: ${themeParam.palette.text.primary};
+              text-decoration: none
+            }
+          `
         }
       }
 })
