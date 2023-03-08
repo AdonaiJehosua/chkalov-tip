@@ -2,7 +2,6 @@ export const navBarStyles = {
     appBar: {
         position: 'relative',
         display: 'flex',
-        border: '1px solid red'
     },
     logoWrapper: {
         display: { xs: 'flex' },
