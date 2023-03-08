@@ -1,12 +1,10 @@
 import { Box, Button, Divider, IconButton, List, ListItem, ListItemButton, Snackbar, SwipeableDrawer, Typography } from "@mui/material"
-import { cloneElement, useContext, useState } from "react"
+import { useContext, useState } from "react"
 import { ContactsContext } from "@/appContext/contactsContext"
 import PhoneIcon from '@mui/icons-material/Phone'
-import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import TelegramIcon from '@mui/icons-material/Telegram'
 import EmailIcon from '@mui/icons-material/Email'
-import CloseIcon from '@mui/icons-material/Close'
 import MapIcon from '@mui/icons-material/Map'
 import { toast } from "react-toastify"
 
