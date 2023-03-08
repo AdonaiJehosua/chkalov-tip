@@ -1,16 +1,13 @@
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
-import textLogo from '../../../media/images/textLogo.svg'
 import { ContactsBox } from './contactsBox'
 import { useContext, useState } from 'react'
 import { XsContactsMenu } from './xsContactsMenu'
 import { navBarStyles } from '@/styles/navBarStyles'
 import { PagesContext } from '@/appContext/PagesContext'
-import Link from 'next/link'
 import { XsMenu } from './xsMenu'
 import { MainMenu } from './mainMenu'
-import { TextLogo } from '@/components/fone/animatedElems/textLogo'
 
 export function NavBar() {
 
