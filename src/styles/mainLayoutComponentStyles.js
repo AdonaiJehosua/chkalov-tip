@@ -87,7 +87,6 @@ export const mainLayoutComponentStyles = {
         boxSizing: 'border-box',
         width: '100%',
         height: '100%',
-        border: '1px solid black',
         marginRight: '15px',
         marginLeft: '15px',
     },
