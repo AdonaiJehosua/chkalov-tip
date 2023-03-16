@@ -16,7 +16,7 @@ export function ContactsPage() {
             height: '100%'
         },
         mapWrapper: {
-            width: mapContainerSize ? '20%' : '100%',
+            width: '100%',
             height: mapContainerSize ? '10%' : '80%',
             border: '1px solid black',
             borderRadius: '10px',
