@@ -6,6 +6,9 @@ const nextConfig = {
 module.exports = nextConfig
 
 module.exports = {
+  compiler: {
+    styledComponents: true
+  },
   webpack: (config) => {
     config.module.rules.push({
       test: /\.(woff(2)?|eot|ttf|otf)$/,
