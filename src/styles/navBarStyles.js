@@ -1,3 +1,6 @@
+import { keyframes } from '@emotion/react'
+
+
 export const navBarStyles = {
     appBar: {
         position: 'relative',
@@ -67,10 +70,26 @@ export const contactsBoxStyles = {
     }
 }
 
+const menuActiveButton = keyframes`
+  from {
+    transform: scale(1, 1);
+    background-color: #ffffff00 
+  }
+  to {
+      transform: scale(1.1, 1.1);
+      background-color: #ffffff99;
+    }
+`
+
 export const mainMenuStyles = {
     mdMenuElem: {
         my: 2,
         color: 'black',
-        display: 'block'
+        display: 'block',
+        borderRadius: '15px',
     },
+    buttonTitle: {
+        
+    }
+
 }
