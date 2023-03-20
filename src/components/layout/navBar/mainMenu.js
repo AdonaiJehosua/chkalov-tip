@@ -35,17 +35,10 @@ export const MainMenuButton = styled(Link)`
 
 const SpanLetter = styled.span`
     &.WTF {
-        color: red;
-        opacity: 1;
-        transition: opacity 0.5s
+        text-transform: uppercase;
+        transition: text-transform 0.5s
     }
-    &:after {
-        opacity: 0;
-        color: red
-    }
-    &:hover {
-        font-weight: bold
-    } 
+    
 `
 function func(pageName) {
     let sdrfg = document.getElementById(pageName)
@@ -98,7 +91,6 @@ export function MainMenu({ pages, handleMenuSelectedItem }) {
     const timer = ms => new Promise(res => setTimeout(res, ms))
 
     async function animationStart(event, pageName) {
-        console.log(event)
         const el = document.getElementById(pageName)
         const characters = el.getElementsByClassName('lettersWrapper_inner')
         let index = characters.length;
