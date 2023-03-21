@@ -36,7 +36,7 @@ export const MainMenuButton = styled(Link)`
 const SpanLetter = styled.span`
     &.WTF {
         text-transform: uppercase;
-        transition: text-transform 0.5s
+        transition: text-transform
     }
     
 `
@@ -111,30 +111,6 @@ export function MainMenu({ pages, handleMenuSelectedItem }) {
             if(event.type === 'mouseenter') {char.classList.add('WTF')} 
             await timer(animationTime / characters.length)
         }
-        for (const char of reversedCharacters) {
-            if(event.type === 'mouseleave') {char.classList.remove('WTF')} else break
-            await timer(animationTime / characters.length)
-        }
-    }
-
-    async function animationStop(event, pageName) {
-        console.log(event)
-        const el = document.getElementById(pageName)
-        const characters = el.getElementsByClassName('lettersWrapper_inner')
-        let index = characters.length;
-        let reversedCharacters = {
-            next: function () {
-                index--;
-                return {
-                    done: index < 0,
-                    value: characters[index]
-                }
-            }
-        }
-        reversedCharacters[Symbol.iterator] = function () {
-            return this;
-        }
-
         for (const char of reversedCharacters) {
             if(event.type === 'mouseleave') {char.classList.remove('WTF')}
             await timer(animationTime / characters.length)
